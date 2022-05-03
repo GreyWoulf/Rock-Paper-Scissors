@@ -1,6 +1,6 @@
 const getUserChoice = userInput => {
     userInput = userInput.toLowerCase();
-    if(userInput === 'rock' || 'paper' || 'scissors'){
+    if(userInput === 'rock' || 'paper' || 'scissors' || 'bomb'){
         return userInput;
     } else {
         console.log(`Error input must be rock, paper or scissors!`);
@@ -15,7 +15,9 @@ const getComputerChoice = () => {
 
 const determineWinner = (userChoice, computerChoice) => {
     let winner = 
-    userChoice === computerChoice 
+    userChoice === 'bomb'
+    ? 'User Won!'
+    : userChoice === computerChoice 
     ? 'tie' 
     : userChoice === 'paper' && computerChoice === 'rock' 
     ? 'User Won!' 
